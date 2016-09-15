@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <trh:script id="scr2">
+    var customHandler = function (event) {
+        var component = AdfPage.PAGE.findComponent(event);
+        var actionEvent = new AdfActionEvent(component);
+        actionEvent.queue();
+    }
+  </trh:script>
+  <af:componentDef var="attrs" componentVar="component">
+    <af:commandButton id="dc_cb1_io" visible="false" clientComponent="true">
+      <af:fileDownloadActionListener method="#{declarativeComponentBean.fileDownloadMethod}"/>
+    </af:commandButton>
+    <af:commandButton id="dc_cb1"
+                      clientComponent="true"
+                      actionListener="#{declarativeComponentBean.buttonActionListener}"
+                      text="#{attrs.ButtonName}"></af:commandButton>
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>reportDeclarative</display-name>
+        <component-class>com.blog.component.ReportDeclarative</component-class>
+        <attribute>
+          <attribute-name>
+            ButtonName
+          </attribute-name>
+          <attribute-class>
+            java.lang.String
+          </attribute-class>
+          <required>
+            true
+          </required>
+        </attribute>
+        <attribute>
+          <attribute-name>
+            ReportType
+          </attribute-name>
+          <attribute-class>
+            java.lang.String
+          </attribute-class>
+          <required>
+            true
+          </required>
+        </attribute>
+        <attribute>
+          <attribute-name>
+            ReportName
+          </attribute-name>
+          <attribute-class>
+            java.lang.String
+          </attribute-class>
+          <required>
+            true
+          </required>
+        </attribute>
+        <attribute>
+          <attribute-name>
+            TableId
+          </attribute-name>
+          <attribute-class>
+            java.lang.String
+          </attribute-class>
+          <required>
+            true
+          </required>
+        </attribute>
+        <attribute>
+          <attribute-name>
+            SerialNumber
+          </attribute-name>
+          <attribute-class>
+            java.lang.Boolean
+          </attribute-class>
+          <default-value>
+            false
+          </default-value>
+        </attribute>
+        <attribute>
+          <attribute-name>
+            Pagination
+          </attribute-name>
+          <attribute-class>
+            java.lang.Boolean
+          </attribute-class>
+          <default-value>
+            false
+          </default-value>
+        </attribute>
+        <attribute>
+          <attribute-name>
+            RowTag
+          </attribute-name>
+          <attribute-class>
+            java.lang.String
+          </attribute-class>
+        </attribute>
+        <attribute>
+          <attribute-name>
+            ParentTag
+          </attribute-name>
+          <attribute-class>
+            java.lang.String
+          </attribute-class>
+        </attribute>
+        <attribute>
+          <attribute-name>
+            SerialColumnHeader
+          </attribute-name>
+          <attribute-class>
+            java.lang.String
+          </attribute-class>
+          <default-value>
+            S.No.
+          </default-value>
+        </attribute>
+        <component-extension>
+          <component-tag-namespace>com.blog.component</component-tag-namespace>
+          <component-taglib-uri>http://www.adfwithejb.blogspot.com</component-taglib-uri>
+        </component-extension>
+      </component>
+    </af:xmlContent>
+  </af:componentDef>
+</jsp:root>

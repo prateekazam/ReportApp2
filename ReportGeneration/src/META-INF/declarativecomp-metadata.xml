@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<declarativeCompDefs xmlns="http://xmlns.oracle.com/adf/faces/rich/declarativecomp">
+  <declarativecomp-jsp-ui-def>/reportDeclarative.jspx</declarativecomp-jsp-ui-def>
+  <declarativecomp-taglib>
+    <taglib-name>reportDeclarative</taglib-name>
+    <taglib-uri>http://www.adfwithejb.blogspot.com</taglib-uri>
+    <taglib-prefix>report</taglib-prefix>
+  </declarativecomp-taglib>
+</declarativeCompDefs>
